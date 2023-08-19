@@ -35,7 +35,8 @@ body{
 }
 
 #container{
-    width: 380px;
+    width: 100%;
+    max-width: 450px;
     margin: 50px auto 0;
 }
 
@@ -80,7 +81,7 @@ body{
 }
 
 #links>ul{
-    margin: auto;
+    margin: auto 24px;
     display: flex;
     padding: 32px 0 32px 0;
     flex-direction: column;
@@ -111,4 +112,5 @@ body{
 #container>footer{
     text-align: center;
     font-size: 12px;
+    margin: 24px;
 }
