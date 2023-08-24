@@ -17,6 +17,7 @@
     --twt: url(properties/light-twt.svg);
     --slink-hover:rgba(0,0,0,0.25);
     --insta: url(properties/light-insta.svg);
+    --linkedin:url(./properties/light-linkedin.svg);
 }
 
 .dark{
@@ -30,6 +31,7 @@
     --twt:url(properties/dark-twt.svg);
     --slink-hover: rgba(255,255,255,0.25);
     --insta: url(properties/dark-insta.svg);
+    --linkedin:url(./properties/dark-linkedin.svg);
 }
 
 body{
@@ -87,9 +89,8 @@ body{
 }
 
 #links>ul{
-    margin: auto 24px;
+    margin: 42px 24px;
     display: flex;
-    padding: 32px 0 32px 0;
     flex-direction: column;
     gap: 20px;
     list-style: none;
@@ -118,41 +119,51 @@ body{
 #container>footer{
     text-align: center;
     font-size: 12px;
-    margin: 24px;
 }
 
 #social-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin: 0px;
+    margin: 42px 0px;
 }
 
-#twt,#insta{
+#twt,#insta,#linkedin{
+    box-sizing: content-box;
+    padding: 15px;
     display: flex;
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--border-link);
+    width: 25px;
+    height: 25px;
     transition: 0.2s;
-    border-radius: 10%;
+    border-radius: 50%;
 }
 
 #twt{
     background: var(--twt) no-repeat center;
-    background-size: 100%;
 }
 
 #insta{
     background: var(--insta) no-repeat center;
-    background-size: 100%;
 }
 
-#insta:hover,#twt:hover{
+#linkedin{
+    background:var(--linkedin) no-repeat center;
+}
+
+#insta:hover,#twt:hover,#linkedin:hover{
     background-color: var(--slink-hover);
 }
 
-#insta:active,#twt:active{
+#insta:active,#twt:active,#linkedin:active{
     box-shadow: inset 0px 0px 10px var(--butact);
     transition: 0s;
+}
+
+#resume{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
 }
