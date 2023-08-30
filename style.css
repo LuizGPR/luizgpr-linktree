@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Quicksand:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 *{
     margin: 0;
@@ -8,6 +9,7 @@
 
 :root{
     --text-color: black;
+    --shadow-color: black;
     --bg-color: white;
     --switch: url(properties/moon-outline.svg);
     --border-link: black;
@@ -18,10 +20,12 @@
     --slink-hover:rgba(0,0,0,0.25);
     --insta: url(properties/light-insta.svg);
     --linkedin:url(./properties/light-linkedin.svg);
+    --back:url(./properties/light-back.png);
 }
 
 .dark{
     --text-color: white;
+    --shadow-color:#aaa;
     --bg-color: black;
     --switch: url(properties/sun-outline.svg);
     --border-link:white;
@@ -32,6 +36,7 @@
     --slink-hover: rgba(255,255,255,0.25);
     --insta: url(properties/dark-insta.svg);
     --linkedin:url(./properties/dark-linkedin.svg);
+    --back:url(./properties/dark-back.png);
 }
 
 body{
@@ -39,17 +44,23 @@ body{
     font-family: Quicksand, sans-serif;
     font-weight: 400;
     color: var(--text-color);
-    transition: 0.3s;
+    transition: 0.2s;
+    margin: 0 24px;
 }
 
 #container{
     width: 100%;
-    max-width: 450px;
-    margin: 50px auto 0;
+    max-width: 600px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: hsla(0, 0%, 50%, 0.5);
+    padding: 24px 0;
+    box-shadow: 6px 6px 0 var(--shadow-color);
 }
 
 #profile{
-    margin: 16px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -88,52 +99,48 @@ body{
     transition: 0s;
 }
 
-#links>ul{
-    margin: 42px 24px;
+#links{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    list-style: none;
-}
-
-#links>ul>li>a{
-    display: flex;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: 0.2s;
-    padding: 10px 0px;
-    border: 3px solid var(--border-link);
     justify-content: center;
-    background-color: var(--bglink);
 }
 
-#links>ul>li>a:hover{
+.links{
+    background-color: var(--bglink);
+    width: 65%;
+    border: 2px solid var(--border-link);
+    padding: 10px 0px;
+    display: flex;
+    color: var(--text-color);
+    text-decoration: none;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.links:hover{
     background-color: var(--link-hover);
 }
 
-#links>ul>li>a:active{
+.links:active{
     box-shadow: inset 0px 0px 10px var(--butact);
     transition: 0s;
 }
 
 #container>footer{
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #social-container{
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 42px 0px;
 }
 
 #twt,#insta,#linkedin{
     box-sizing: content-box;
-    padding: 15px;
+    padding: 24px;
     display: flex;
-    width: 25px;
-    height: 25px;
+    width: 12px;
+    height: 12px;
     transition: 0.2s;
     border-radius: 50%;
 }
@@ -159,11 +166,39 @@ body{
     transition: 0s;
 }
 
-#resume{
-    height: 100vh;
+body#resume{
+    font-family: Unna, serif;
+    margin: 16px;
+}
+.resume-container{
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 50px;
+    margin: auto;
+    padding: 16px 32px;
+    gap: 32px;
+    background-color: #ccc;
+}
+.data-container>ul{
+    list-style: square inside;
+}
+.resume-container>h1{
+    text-indent: 8%;
+}
+.title{
+    background-color: rgba(0,0,0,0.15);
+    border-width: 0 0 2px 0;
+    border-style: solid;
+}
+.subtitle{
+    margin-bottom: 10px;
+}
+li::after{
+    content: ";";
+    color: black;
+}
+.final-li::after{
+    content: ".";
+    color: black;
 }
