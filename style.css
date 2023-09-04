@@ -14,8 +14,7 @@
     --switch: url(properties/moon-outline.svg);
     --border-link: black;
     --bglink: rgba(0,0,0,0.15);
-    --link-hover: rgba(0,0,0,0.3);
-    --butact: rgba(0,0,0,0.5);
+    --link-bghover: rgba(0,0,0,0.3);
     --twt: url(properties/light-twt.svg);
     --slink-hover:rgba(0,0,0,0.25);
     --insta: url(properties/light-insta.svg);
@@ -29,8 +28,7 @@
     --switch: url(properties/sun-outline.svg);
     --border-link:white;
     --bglink: rgba(255,255,255,0.15);
-    --link-hover: rgba(255,255,255,0.3);
-    --butact: rgba(255,255,255,0.5);
+    --link-bghover: rgba(255,255,255,0.3);
     --twt:url(properties/dark-twt.svg);
     --slink-hover: rgba(255,255,255,0.25);
     --insta: url(properties/dark-insta.svg);
@@ -89,11 +87,11 @@ body{
 }
 
 #button>button:hover{
-    background-color: var(--link-hover);
+    background-color: var(--link-bghover);
 }
 
 #button>button:active{
-    box-shadow: inset 0px 0px 10px var(--butact);
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
     transition: 0s;
 }
 
@@ -115,11 +113,11 @@ body{
 }
 
 .links:hover{
-    background-color: var(--link-hover);
+    background-color: var(--link-bghover);
 }
 
 .links:active{
-    box-shadow: inset 0px 0px 10px var(--butact);
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
     transition: 0s;
 }
 
@@ -160,13 +158,14 @@ body{
 }
 
 #insta:active,#twt:active,#linkedin:active{
-    box-shadow: inset 0px 0px 10px var(--butact);
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
     transition: 0s;
 }
 
 body#resume{
     font-family: Unna, serif;
     margin: 16px;
+    background-color: var(--bglink);
 }
 .resume-container{
     width: 100%;
@@ -176,24 +175,37 @@ body#resume{
     margin: auto;
     padding: 16px 16px;
     gap: 32px;
-    background-color: var(--bglink);
 }
 .data-container>ul{
     list-style: square inside;
 }
 
-.title{
+.main-title{
+    font-size: 3em;
+    text-align: center;
+}
+
+
+.title,p{
     text-indent: 15px;
-    background-color: rgba(0,0,0,0.15);
+}
+
+.certified{
+    text-indent: 10px;
+    font-variant: small-caps;
+}
+
+.title{
+    color: #061761;
+    background-color: hsla(230, 100%, 30%, 0.15);
     border-width: 0 0 2px 0;
     border-style: solid;
+    border-color: black;
     font-variant: small-caps;
 }
 .subtitle{
+    font-size: 2em;
     margin-bottom: 10px;
-}
-li{
-    font-style: normal;
 }
 li::after{
     content: ";";
@@ -206,6 +218,18 @@ li::after{
 .resume-list{
     margin-left: 10px;
 }
+
+.contact,.contact-list{
+    color: var(--text-color);
+    text-decoration: none;
+    font-style: normal;
+}
+.contact:hover{
+    color: #555;
+}
+.contact:active{
+    color: #aaa;
+}
 .backbutton{
     width: 64px;
     height: 64px;
@@ -215,5 +239,9 @@ li::after{
     background-size: 75%;
     border: 4px solid var(--border-link);
     border-radius: 50%;
-    box-shadow: 1px 1px 2.5px var(--butact);
+    transition: 0.2s;
+}
+.backbutton:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
